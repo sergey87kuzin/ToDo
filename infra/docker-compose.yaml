@@ -6,18 +6,18 @@ volumes:
 services:
 
   web:
-    # build:
-    #   context: ../backend
-    #   dockerfile: Dockerfile
-    image: greytres/todobackend:latest
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    # image: greytres/todobackend:latest
     restart: always
     env_file:
       - ../backend/.env
   frontend:
-    # build:
-    #   context: ../frontend
-    #   dockerfile: Dockerfile
-    image: greytres/todofrontend:latest
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    # image: greytres/todofrontend:latest
     volumes:
       - ../frontend/:/app/result_build/
     depends_on:
